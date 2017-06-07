@@ -1,0 +1,514 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Url http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /dependencia/:
+    get:
+      tags:
+      - dependencia
+      description: get Dependencia
+      operationId: DependenciaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Dependencia'
+        "403": {}
+    post:
+      tags:
+      - dependencia
+      description: create Dependencia
+      operationId: DependenciaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Dependencia content
+        required: true
+        schema:
+          $ref: '#/definitions/Dependencia'
+      responses:
+        "201":
+          description: '{int} models.Dependencia'
+        "403":
+          description: body is empty
+  /dependencia/{id}:
+    get:
+      tags:
+      - dependencia
+      description: get Dependencia by id
+      operationId: DependenciaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Dependencia'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - dependencia
+      description: update the Dependencia
+      operationId: DependenciaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Dependencia content
+        required: true
+        schema:
+          $ref: '#/definitions/Dependencia'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Dependencia'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - dependencia
+      description: delete the Dependencia
+      operationId: DependenciaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /dependencia_padre/:
+    get:
+      tags:
+      - dependencia_padre
+      description: get DependenciaPadre
+      operationId: DependenciaPadreController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/DependenciaPadre'
+        "403": {}
+    post:
+      tags:
+      - dependencia_padre
+      description: create DependenciaPadre
+      operationId: DependenciaPadreController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for DependenciaPadre content
+        required: true
+        schema:
+          $ref: '#/definitions/DependenciaPadre'
+      responses:
+        "201":
+          description: '{int} models.DependenciaPadre'
+        "403":
+          description: body is empty
+  /dependencia_padre/{id}:
+    get:
+      tags:
+      - dependencia_padre
+      description: get DependenciaPadre by id
+      operationId: DependenciaPadreController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/DependenciaPadre'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - dependencia_padre
+      description: update the DependenciaPadre
+      operationId: DependenciaPadreController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for DependenciaPadre content
+        required: true
+        schema:
+          $ref: '#/definitions/DependenciaPadre'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/DependenciaPadre'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - dependencia_padre
+      description: delete the DependenciaPadre
+      operationId: DependenciaPadreController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /dependencia_tipo_dependencia/:
+    get:
+      tags:
+      - dependencia_tipo_dependencia
+      description: get DependenciaTipoDependencia
+      operationId: DependenciaTipoDependenciaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/DependenciaTipoDependencia'
+        "403": {}
+    post:
+      tags:
+      - dependencia_tipo_dependencia
+      description: create DependenciaTipoDependencia
+      operationId: DependenciaTipoDependenciaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for DependenciaTipoDependencia content
+        required: true
+        schema:
+          $ref: '#/definitions/DependenciaTipoDependencia'
+      responses:
+        "201":
+          description: '{int} models.DependenciaTipoDependencia'
+        "403":
+          description: body is empty
+  /dependencia_tipo_dependencia/{id}:
+    get:
+      tags:
+      - dependencia_tipo_dependencia
+      description: get DependenciaTipoDependencia by id
+      operationId: DependenciaTipoDependenciaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/DependenciaTipoDependencia'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - dependencia_tipo_dependencia
+      description: update the DependenciaTipoDependencia
+      operationId: DependenciaTipoDependenciaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for DependenciaTipoDependencia content
+        required: true
+        schema:
+          $ref: '#/definitions/DependenciaTipoDependencia'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/DependenciaTipoDependencia'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - dependencia_tipo_dependencia
+      description: delete the DependenciaTipoDependencia
+      operationId: DependenciaTipoDependenciaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /tipo_dependencia/:
+    get:
+      tags:
+      - tipo_dependencia
+      description: get TipoDependencia
+      operationId: TipoDependenciaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/TipoDependencia'
+        "403": {}
+    post:
+      tags:
+      - tipo_dependencia
+      description: create TipoDependencia
+      operationId: TipoDependenciaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoDependencia content
+        required: true
+        schema:
+          $ref: '#/definitions/TipoDependencia'
+      responses:
+        "201":
+          description: '{int} models.TipoDependencia'
+        "403":
+          description: body is empty
+  /tipo_dependencia/{id}:
+    get:
+      tags:
+      - tipo_dependencia
+      description: get TipoDependencia by id
+      operationId: TipoDependenciaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/TipoDependencia'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - tipo_dependencia
+      description: update the TipoDependencia
+      operationId: TipoDependenciaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoDependencia content
+        required: true
+        schema:
+          $ref: '#/definitions/TipoDependencia'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/TipoDependencia'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - tipo_dependencia
+      description: delete the TipoDependencia
+      operationId: TipoDependenciaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  Dependencia:
+    title: Dependencia
+    type: object
+    properties:
+      CorreoElectronico:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      TelefonoDependencia:
+        type: string
+  DependenciaPadre:
+    title: DependenciaPadre
+    type: object
+    properties:
+      Hija:
+        $ref: '#/definitions/Dependencia'
+      Id:
+        type: integer
+        format: int64
+      Padre:
+        $ref: '#/definitions/Dependencia'
+  DependenciaTipoDependencia:
+    title: DependenciaTipoDependencia
+    type: object
+    properties:
+      DependenciaId:
+        $ref: '#/definitions/Dependencia'
+      Id:
+        type: integer
+        format: int64
+      TipoDependenciaId:
+        $ref: '#/definitions/TipoDependencia'
+  TipoDependencia:
+    title: TipoDependencia
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+tags:
+- name: dependencia
+  description: |
+    DependenciaController oprations for Dependencia
+- name: dependencia_tipo_dependencia
+  description: |
+    DependenciaTipoDependenciaController oprations for DependenciaTipoDependencia
+- name: dependencia_padre
+  description: |
+    DependenciaPadreController oprations for DependenciaPadre
+- name: tipo_dependencia
+  description: |
+    TipoDependenciaController oprations for TipoDependencia

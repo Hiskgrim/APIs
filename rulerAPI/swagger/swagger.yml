@@ -1,0 +1,391 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Url http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /dominio/:
+    get:
+      tags:
+      - dominio
+      description: get Dominio
+      operationId: DominioController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Dominio'
+        "403": {}
+    post:
+      tags:
+      - dominio
+      description: create Dominio
+      operationId: DominioController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Dominio content
+        required: true
+        schema:
+          $ref: '#/definitions/Dominio'
+      responses:
+        "201":
+          description: '{int} models.Dominio'
+        "403":
+          description: body is empty
+  /dominio/{id}:
+    get:
+      tags:
+      - dominio
+      description: get Dominio by id
+      operationId: DominioController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Dominio'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - dominio
+      description: update the Dominio
+      operationId: DominioController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Dominio content
+        required: true
+        schema:
+          $ref: '#/definitions/Dominio'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Dominio'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - dominio
+      description: delete the Dominio
+      operationId: DominioController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /predicado/:
+    get:
+      tags:
+      - predicado
+      description: get Predicado
+      operationId: PredicadoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Predicado'
+        "403": {}
+    post:
+      tags:
+      - predicado
+      description: create Predicado
+      operationId: PredicadoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Predicado content
+        required: true
+        schema:
+          $ref: '#/definitions/Predicado'
+      responses:
+        "201":
+          description: '{int} models.Predicado'
+        "403":
+          description: body is empty
+  /predicado/{id}:
+    get:
+      tags:
+      - predicado
+      description: get Predicado by id
+      operationId: PredicadoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Predicado'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - predicado
+      description: update the Predicado
+      operationId: PredicadoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Predicado content
+        required: true
+        schema:
+          $ref: '#/definitions/Predicado'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/Predicado'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - predicado
+      description: delete the Predicado
+      operationId: PredicadoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+  /tipo_predicado/:
+    get:
+      tags:
+      - tipo_predicado
+      description: get TipoPredicado
+      operationId: TipoPredicadoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/TipoPredicado'
+        "403": {}
+    post:
+      tags:
+      - tipo_predicado
+      description: create TipoPredicado
+      operationId: TipoPredicadoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for TipoPredicado content
+        required: true
+        schema:
+          $ref: '#/definitions/TipoPredicado'
+      responses:
+        "201":
+          description: '{int} models.TipoPredicado'
+        "403":
+          description: body is empty
+  /tipo_predicado/{id}:
+    get:
+      tags:
+      - tipo_predicado
+      description: get TipoPredicado by id
+      operationId: TipoPredicadoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/TipoPredicado'
+        "403":
+          description: :id is empty
+    put:
+      tags:
+      - tipo_predicado
+      description: update the TipoPredicado
+      operationId: TipoPredicadoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for TipoPredicado content
+        required: true
+        schema:
+          $ref: '#/definitions/TipoPredicado'
+      responses:
+        "200":
+          schema:
+            $ref: '#/definitions/TipoPredicado'
+        "403":
+          description: :id is not int
+    delete:
+      tags:
+      - tipo_predicado
+      description: delete the TipoPredicado
+      operationId: TipoPredicadoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: id is empty
+definitions:
+  Dominio:
+    title: Dominio
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+  Predicado:
+    title: Predicado
+    type: object
+    properties:
+      Descripcion:
+        type: string
+      Dominio:
+        $ref: '#/definitions/Dominio'
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+      TipoPredicado:
+        $ref: '#/definitions/TipoPredicado'
+  TipoPredicado:
+    title: TipoPredicado
+    type: object
+    properties:
+      Id:
+        type: integer
+        format: int64
+      Nombre:
+        type: string
+tags:
+- name: dominio
+  description: |
+    DominioController oprations for Dominio
+- name: tipo_predicado
+  description: |
+    TipoPredicadoController oprations for TipoPredicado
+- name: predicado
+  description: |
+    PredicadoController oprations for Predicado
